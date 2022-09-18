@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <form action="/todo/new" method="post">
+        <div class="form-group">
+            <label for="priority">이름</label>
+            <input type="text" id="priority" name="priority" placeholder="우선순위를 입력하세요">
+            <label for="context">할일</label>
+            <input type="text" id="context" name="context" placeholder="할일을 입력하세요">
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>

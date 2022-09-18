@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>등록 순서</th>
+                <th>할일 내용</th>
+                <th>우선 순위</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.id}"></td>
+                <td th:text="${todo.todoContext}"></td>
+                <td th:text="${todo.priority}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="location.href='/sortedTodos?sorted=desc'">내림차순</button>
+        <button type="button" onclick="location.href='/sortedTodos?sorted=asc'">오름차순</button>
+        <br>
+
+        <form action="/searchTodo" method="post">
+            <label for="context"></label>
+            <input id="context" name="context">
+            <button type="submit">검색</button>
+        </form>
+
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
